@@ -1,0 +1,10 @@
+<h1>Add a new Warehouse</h1>
+<div class="container">
+  <%= simple_form_for @warehouse do |f| %>
+    <%= f.input :name %>
+
+    <%= f.input :location, collection: %w(London Birmingham Leeds) %>
+
+    <%= f.submit  %>
+  <% end %>
+</div>

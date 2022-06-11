@@ -1,0 +1,7 @@
+<h1> All Warehouses </h1>
+
+<ol>
+  <% @warehouses.each do |warehouse| %>
+    <li><%= link_to warehouse.name, warehouse_path(warehouse) %></li>
+  <% end %>
+</ol>

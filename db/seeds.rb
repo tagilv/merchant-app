@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying Warehouses"
-Warehouse.destroy
+Warehouse.destroy_all
 
 puts "creating warehouses"
 Warehouse.create(name:'Supermall', location: 'London')

@@ -10,8 +10,14 @@ puts "Destroying Warehouses"
 Warehouse.destroy_all
 
 puts "creating warehouses"
+
 Warehouse.create(name:'Supermall', location: 'London')
-Warehouse.create(name:'Nova', location: 'Birmingham')
-Warehouse.create(name:'Kaufland', location: 'Leeds')
 Warehouse.create(name:'Illum', location: 'London')
-puts "Warehouses created"
+
+kaufland = Warehouse.create(name:'Kaufland', location: 'Birmingham')
+
+puts "Adding products for Kaufland"
+Product.create(name:'Bobbycar', price: '20', description: 'Kids toy', quantity: '4', warehouse: kaufland)
+Product.create(name:'Teddy Bear', price: '10', description: 'Kids toy', quantity: '1', warehouse: kaufland)
+
+puts "Warehouses and prodcuts added"

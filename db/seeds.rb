@@ -6,9 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "creating seed"
+puts "Destroying Warehouses"
+Warehouse.destroy
+
+puts "creating warehouses"
 Warehouse.create(name:'Supermall', location: 'London')
 Warehouse.create(name:'Nova', location: 'Birmingham')
 Warehouse.create(name:'Kaufland', location: 'Leeds')
 Warehouse.create(name:'Illum', location: 'London')
-puts "Seed done"
+puts "Warehouses created"

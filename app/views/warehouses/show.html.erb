@@ -13,6 +13,7 @@
     <% end%>
   </ul>
 
+  <%= link_to 'Add a Product', new_warehouse_product_path(@warehouse) %>
   <%= link_to "Back to all Warehouses", warehouses_path %>
   <%= link_to "Edit this Warehouse", warehouses_path(@warehouse) %>
   <%= link_to "Delete this Warehouse", warehouse_path(@warehouse), method: :delete, data: { confirm: "Are you sure?" } %>

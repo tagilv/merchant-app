@@ -1,21 +1,17 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.mallofamerica.com%2F%2Fsites%2Fdefault%2Ffiles%2F2017-10%2Fhours-hero-first_card.jpg&imgrefurl=https%3A%2F%2Fwww.mallofamerica.com%2Fplan-your-trip%2Fhours-directions&tbnid=DKkY2x4H0hrZbM&vet=12ahUKEwjQ7JD7pqj4AhVP_qQKHUY4AwMQMygEegUIARDhAQ..i&docid=EvY8OiA3X-NQGM&w=1920&h=1080&q=mall%20of%20america&ved=2ahUKEwjQ7JD7pqj4AhVP_qQKHUY4AwMQMygEegUIARDhAQ);">
-  <div class="container">
-    <h1><%= @warehouse.name %></h1>
-  </div>
-</div>
-
 <div class="container">
-  <h2>Prodcuts found in <%= @warehouse.name %> in <%= @warehouse.location %>:</h2>
-
-  <ul>
+  <h3>Prodcuts found in <%= @warehouse.name %> in <%= @warehouse.location %>:</h3>
+  <ol>
     <% @warehouse.products.each do |product|%>
-      <li><strong><%= product.name%></strong> | Product description: <%=product.description%> | Product price: <%=product.price%></li>
-      <%= link_to "delete", product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete this item?" } %>
+    <li><%= link_to product.name, product_path(product) %></li>
     <% end%>
-  </ul>
+  </ol>
 
-  <%= link_to "Add a Product", new_warehouse_product_path(@warehouse) %>
-  <%= link_to "Back to all Warehouses", warehouses_path %>
-  <%= link_to "Edit this Warehouse", warehouses_path(@warehouse) %>
-  <%= link_to "Delete this Warehouse", warehouse_path(@warehouse), method: :delete, data: { confirm: "Are you sure?" } %>
+  <hr>
+    <ul>
+      <li><%= link_to "Create a new Product", new_product_path %></li>
+      <li><%= link_to "Go to all Warehoues", warehouses_path %></li>
+      <li><%= link_to "Edit this Warehouse", edit_warehouse_path(@warehouse) %></li>
+      <li><%= link_to "Delete this Warehouse", warehouse_path(@warehouse), method: :delete, data: { confirm: "Are you sure?" } %></li>
+    </ul>
+  <hr>
 </div>

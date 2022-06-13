@@ -1,9 +1,16 @@
-<h1> All Warehouses </h1>
+<div class="container">
+  <h3> List of all Warehouses: </h3>
 
-<ol>
-  <% @warehouses.each do |warehouse| %>
-    <li><%= link_to warehouse.name, warehouse_path(warehouse) %></li>
-  <% end %>
-</ol>
+  <ol>
+    <% @warehouses.each do |warehouse| %>
+      <li><%= link_to warehouse.name, warehouse_path(warehouse) %></li>
+    <% end %>
+  </ol>
 
-<%= link_to "Create new Warehouse", new_warehouse_path %>
+  <hr>
+  <ul>
+    <li><%= link_to "Create new Warehouse", new_warehouse_path %></li>
+    <li><%= link_to "Go to all Products", products_path %></li>
+  </ul>
+  <hr>
+</div>

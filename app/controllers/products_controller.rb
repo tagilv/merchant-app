@@ -1,5 +1,13 @@
 class ProductsController < ApplicationController
-  before_action :find_warehouse, except: [:destroy]
+  before_action :find_product, only: [:show, :edit, :update, :destroy]
+
+
+  def index
+    @products = Product.all
+  end
+
+  def show
+  end
 
   def new
     @product = Product.new
@@ -7,27 +15,33 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.warehouse = @warehouse
     if @product.save
-      redirect_to warehouse_path(@warehouse)
+      redirect_to products_path
     else
       render :new
     end
   end
 
+  def edit
+  end
+
+  def update
+    @product.update(product_params)
+    redirect_to product_path(@product)
+  end
+
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
-    redirect_to warehouse_path(@product.warehouse)
+    redirect_to products_path
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :quantity)
+    params.require(:product).permit(:name, :price, :description, :warehouse_id)
   end
 
-  def find_warehouse
-    @warehouse = Warehouse.find(params[:warehouse_id])
+  def find_product
+    @product = Product.find(params[:id])
   end
 end

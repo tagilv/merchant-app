@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Create/Edit a Product</h1>
+
+  <%= simple_form_for @product do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.association :warehouse %>
+    <%= f.submit %>
+  <% end%>
+</div>

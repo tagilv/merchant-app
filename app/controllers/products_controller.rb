@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :find_warehouse, except: [:destroy]
+
   def new
     @product = Product.new
   end
@@ -18,7 +19,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to warehouse_path(@product.warehouse)
-
   end
 
   private

@@ -17,7 +17,7 @@ Warehouse.create(name:'Illum', location: 'London')
 kaufland = Warehouse.create(name:'Kaufland', location: 'Birmingham')
 
 puts "Adding products for Kaufland"
-Product.create(name:'Bobbycar', price: '20', description: 'Kids toy', quantity: '4', warehouse: kaufland)
-Product.create(name:'Teddy Bear', price: '10', description: 'Kids toy', quantity: '1', warehouse: kaufland)
+Product.create(name:'Bobbycar', price: '20', description: 'Kids toy', warehouse: kaufland)
+Product.create(name:'Teddy Bear', price: '10', description: 'Kids toy', warehouse: kaufland)
 
 puts "Warehouses and prodcuts added"

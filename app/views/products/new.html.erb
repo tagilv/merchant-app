@@ -1,0 +1,9 @@
+<h1>Add a new Product</h1>
+
+<%= simple_form_for [@warehouse, @product] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :quantity %>
+  <%= f.submit %>
+<% end%>

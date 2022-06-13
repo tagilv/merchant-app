@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :find_warehouse
+  before_action :find_warehouse, except: [:destroy]
   def new
     @product = Product.new
   end
@@ -12,6 +12,13 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to warehouse_path(@product.warehouse)
+
   end
 
   private

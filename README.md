@@ -4,7 +4,7 @@ Name
 Merchant-app
 
 Description
-With this application you can manage manage inventory across different warehouses. You can add, edit, delete and view products as well as assigning the products to different warehouses. You can also view product specific information such as price and product description on the individual show pages of the products.
+* With this application you can manage manage inventory across different warehouses. You can add, edit, delete and view     products as well as assigning the products to different warehouses. You can also view product specific information such as price and product description on the individual show pages of the products.
 
 Usage
 1. To get some initial data run rails db:seed. Two products assigned to the Warehouse Kaufland will be created

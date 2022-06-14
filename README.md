@@ -19,7 +19,7 @@ System Testing and Unit Testing
 - I have set up one unit test where I test the Warehouse model (warehouse_test.rb)
 - Ideally more tests should be added.
 
-* Ruby version: '3.0.3'
-
-* Database: sqlite3', '~> 1.4'
+Versions
+- Ruby version: '3.0.3'
+- Database: sqlite3', '~> 1.4'
 
